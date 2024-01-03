@@ -21,11 +21,8 @@ ImageModel _$ImageModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ImageModel {
   String get imageName => throw _privateConstructorUsedError;
-  set imageName(String value) => throw _privateConstructorUsedError;
   String get directoryName => throw _privateConstructorUsedError;
-  set directoryName(String value) => throw _privateConstructorUsedError;
   String get downloadUrl => throw _privateConstructorUsedError;
-  set downloadUrl(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -131,16 +128,34 @@ class _$ImageModelImpl implements _ImageModel {
       _$$ImageModelImplFromJson(json);
 
   @override
-  String imageName;
+  final String imageName;
   @override
-  String directoryName;
+  final String directoryName;
   @override
-  String downloadUrl;
+  final String downloadUrl;
 
   @override
   String toString() {
     return 'ImageModel(imageName: $imageName, directoryName: $directoryName, downloadUrl: $downloadUrl)';
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ImageModelImpl &&
+            (identical(other.imageName, imageName) ||
+                other.imageName == imageName) &&
+            (identical(other.directoryName, directoryName) ||
+                other.directoryName == directoryName) &&
+            (identical(other.downloadUrl, downloadUrl) ||
+                other.downloadUrl == downloadUrl));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, imageName, directoryName, downloadUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -158,22 +173,19 @@ class _$ImageModelImpl implements _ImageModel {
 
 abstract class _ImageModel implements ImageModel {
   factory _ImageModel(
-      {required String imageName,
-      required String directoryName,
-      required String downloadUrl}) = _$ImageModelImpl;
+      {required final String imageName,
+      required final String directoryName,
+      required final String downloadUrl}) = _$ImageModelImpl;
 
   factory _ImageModel.fromJson(Map<String, dynamic> json) =
       _$ImageModelImpl.fromJson;
 
   @override
   String get imageName;
-  set imageName(String value);
   @override
   String get directoryName;
-  set directoryName(String value);
   @override
   String get downloadUrl;
-  set downloadUrl(String value);
   @override
   @JsonKey(ignore: true)
   _$$ImageModelImplCopyWith<_$ImageModelImpl> get copyWith =>

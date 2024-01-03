@@ -1,10 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'image_model.freezed.dart';
-
 part 'image_model.g.dart';
 
-@unfreezed
+@freezed
 class ImageModel with _$ImageModel {
   factory ImageModel({
     required String imageName,
@@ -12,5 +11,7 @@ class ImageModel with _$ImageModel {
     required String downloadUrl,
   }) = _ImageModel;
 
-  factory ImageModel.fromJson(Map<String, dynamic> json)=> _$ImageModelFromJson(json);
+  factory ImageModel.fromJson(Map<String, dynamic> json) =>
+      _$ImageModelFromJson(json);
 }
+

@@ -1,9 +1,10 @@
-import 'package:firebase_user_app_flutter/models/brand.dart';
-import 'package:firebase_user_app_flutter/models/image_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'telescope.freezed.dart';
+import 'brand.dart';
+import 'image_model.dart';
 
+
+part 'telescope.freezed.dart';
 part 'telescope.g.dart';
 
 @unfreezed
@@ -25,9 +26,11 @@ class Telescope with _$Telescope {
     @Default(0) num discount,
     required ImageModel thumbnail,
     required List<ImageModel> additionalImage,
-    String? description,
+    String? description
   }) = _Telescope;
 
   factory Telescope.fromJson(Map<String, dynamic> json) =>
       _$TelescopeFromJson(json);
+
 }
+

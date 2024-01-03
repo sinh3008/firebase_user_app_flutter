@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
           ),
         )
         .apply(
+          // fontFamily: "Muli",
           displayColor: kShrineBrown900,
           bodyColor: kShrineBrown900,
         );
@@ -60,7 +61,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: _buildShrineTheme(),
       builder: EasyLoading.init(),
       home: Scaffold(
